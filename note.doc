@@ -1,0 +1,6 @@
+﻿1. Les erreurs de donnée sont dans la table emprunter 
+* where NL=12 et NL=26 car la dateEmp est ultérieur à la dateRet
+UPDATE `biblio`.`emprunter` SET `dateRet` = '2021-09-13' WHERE (`NL` = '26') and (`dateEmp` = '2021-08-16');
+UPDATE `biblio`.`emprunter` SET `dateRet` = '2021-12-15' WHERE (`NL` = '12') and (`dateEmp` = '2021-08-31');
+Suggestions
+A.  table "oeuvre", enlever le champ auteur et créer un autre table auteur car un livre peut être écrit par plusieur auteur et création d'un table intermédiaire "écrire" liant la table auteur et oeuvre dans le cas où il y a plusieur auteur. Mais dans notre base de donnée nous avons qu'un auteur pour chaque livre.
